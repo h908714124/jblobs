@@ -35,7 +35,7 @@ class ProcessorTest {
                 "package test;",
                 "",
                 "import net.jblobs.MapMirror;",
-                "import net.jblobs.Property;",
+                "import net.jblobs.Parameter;",
                 "");
         List<String> moreLines = new ArrayList<>(lines.length + header.size());
         moreLines.addAll(header);
