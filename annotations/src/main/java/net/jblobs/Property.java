@@ -4,9 +4,15 @@ import java.lang.annotation.ElementType;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
+import java.util.function.Supplier;
 
-@Target(ElementType.TYPE)
+@Target(ElementType.METHOD)
 @Retention(RetentionPolicy.SOURCE)
-public @interface MapBlob {
-    String foo();
+public @interface Property {
+
+    String key();
+
+    boolean optional() default false;
+
+    Class<? extends Supplier> mappedBy() default Supplier.class;
 }
