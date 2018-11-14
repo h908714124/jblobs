@@ -21,12 +21,12 @@ class ProcessorTest {
                 "@MapBlob",
                 "abstract class ValidArguments {",
                 "",
-                "  @Property",
+                "  @Blobberty(key = \"a\")",
                 "  abstract int x();",
                 "}");
         JavaFileObject javaFile = forSourceLines("test.ValidArguments", sourceLines);
         assertAbout(javaSources()).that(singletonList(javaFile))
-                .processedWith(new Processor())
+                .processedWith(new Processor(true))
                 .compilesWithoutError();
     }
 
@@ -34,8 +34,8 @@ class ProcessorTest {
         List<String> header = Arrays.asList(
                 "package test;",
                 "",
-                "import net.jblobs.MapMirror;",
-                "import net.jblobs.Parameter;",
+                "import net.jblobs.MapBlob;",
+                "import net.jblobs.Blobberty;",
                 "");
         List<String> moreLines = new ArrayList<>(lines.length + header.size());
         moreLines.addAll(header);

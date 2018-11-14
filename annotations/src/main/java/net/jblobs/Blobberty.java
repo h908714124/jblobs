@@ -8,7 +8,7 @@ import java.util.function.Supplier;
 
 @Target(ElementType.METHOD)
 @Retention(RetentionPolicy.SOURCE)
-public @interface Parameter {
+public @interface Blobberty {
 
     String key();
 

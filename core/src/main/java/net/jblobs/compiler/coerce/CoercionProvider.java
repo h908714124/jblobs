@@ -1,6 +1,9 @@
 package net.jblobs.compiler.coerce;
 
+import com.squareup.javapoet.CodeBlock;
+
 import javax.lang.model.element.ExecutableElement;
+import java.util.Optional;
 
 public class CoercionProvider {
 
@@ -15,6 +18,6 @@ public class CoercionProvider {
 
     public Coercion findCoercion(
             ExecutableElement sourceMethod, boolean optional) {
-        return null;
+        return Coercion.create(Optional.empty(), CodeBlock.builder().build());
     }
 }

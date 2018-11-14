@@ -1,7 +1,7 @@
 package net.jblobs.compiler;
 
 import com.squareup.javapoet.CodeBlock;
-import net.jblobs.Parameter;
+import net.jblobs.Blobberty;
 import net.jblobs.compiler.coerce.Coercion;
 import net.jblobs.compiler.coerce.CoercionProvider;
 import net.jblobs.compiler.coerce.MapperInfo;
@@ -45,12 +45,12 @@ class Param {
     }
 
     private static boolean isOptional(ExecutableElement sourceMethod) {
-        Parameter parameter = sourceMethod.getAnnotation(Parameter.class);
+        Blobberty parameter = sourceMethod.getAnnotation(Blobberty.class);
         return parameter.optional();
     }
 
     private static String getKey(List<Param> params, ExecutableElement sourceMethod) {
-        Parameter parameter = sourceMethod.getAnnotation(Parameter.class);
+        Blobberty parameter = sourceMethod.getAnnotation(Blobberty.class);
         String key = parameter.key();
         for (Param param : params) {
             if (param.key.equals(key)) {
